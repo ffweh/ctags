@@ -26,3 +26,7 @@
 - HTML5
 - CSS3
 - JavaScript
+
+## 참고
+
+- [https://arca.live/b/aiart/101160070](https://arca.live/b/aiart/101160070)
