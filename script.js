@@ -94,12 +94,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 클릭 이벤트 리스너를 복사 버튼에 추가합니다.
 document.getElementById('copyButton').addEventListener('click', function() {
-  // textarea의 내용을 선택합니다.
-  const textarea = document.getElementById('result');
-  textarea.select();
-  // 선택한 텍스트를 클립보드에 복사합니다.
-  document.execCommand('copy');
+    // textarea의 내용을 선택합니다.
+    const textarea = document.getElementById('result');
+    textarea.select();
+    // 선택한 텍스트를 클립보드에 복사합니다.
+    document.execCommand('copy');
 
-  // 사용자에게 복사가 완료되었음을 알리는 메시지를 표시합니다.
-  alert("클립보드에 복사되었습니다.");
+    // toast 메시지를 표시합니다.
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    toast.style.opacity = 1;
+
+    // 일정 시간 후에 toast 메시지를 자동으로 사라지게 합니다.
+    setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 500); // opacity가 0이 된 후에 display를 none으로 설정
+    }, 2000); // 2초 후에 사라짐
 });
